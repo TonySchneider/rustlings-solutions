@@ -8,7 +8,8 @@
 // I AM NOT DONE
 
 fn main() {
-    let a = ???
+    let size = 100;
+    let a: Vec<i32> = (0..100).collect();
 
     if a.len() >= 100 {
         println!("Wow, that's a big array!");
