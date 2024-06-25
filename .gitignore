@@ -1,0 +1,30 @@
+# Compiled files
+/target/
+
+# Rust build artifacts
+**/*.rs.bk
+
+# Backup files
+*.bk
+*.swp
+*~
+
+# Ignore environment configuration files
+.env
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# LSP artifacts for Rust
+**/.rls/
+**/rustfmt.toml
+**/.rustfmt.toml
+**/rust-toolchain
+**/rust-toolchain.toml
+**/.vscode/
+
+# Ignore Cargo.lock for libraries
+# Uncomment the following line if this is a binary project
+# Cargo.lock
