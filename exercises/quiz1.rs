@@ -16,12 +16,8 @@
 
 
 // Put your function here!
-fn calculate_price_of_apples(price: u32) -> u32 {
-    if price == 41 || price == 65 {
-        price
-    } else {
-        price * 2
-    }
+fn calculate_price_of_apples(apples: u32) -> u32 {
+    if apples > 40 { apples * 1} else { apples * 2 }
 }
 
 // Don't modify this function!

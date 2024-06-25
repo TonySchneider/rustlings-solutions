@@ -8,19 +8,14 @@
 #[test]
 fn main() {
     let vec0 = vec![22, 44, 66];
+    let mut vec1 = fill_vec(&vec0);
+
     assert_eq!(vec0, vec![22, 44, 66]);
-
-    let mut vec1 = fill_vec(vec0);
-
-    // the ownership of vec0 has passed to the argument of the function so it was removed so we can print vec0 here.
-    // I have moved this print before the ownership was passed
-    // assert_eq!(vec0, vec![22, 44, 66]);
-
     assert_eq!(vec1, vec![22, 44, 66, 88]);
 }
 
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let mut vec = vec;
+fn fill_vec(vec: &Vec<i32>) -> Vec<i32> {
+    let mut vec = vec.clone();
 
     vec.push(88);
 

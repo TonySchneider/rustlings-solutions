@@ -10,14 +10,8 @@
 
 fn array_and_vec() -> ([i32; 4], Vec<i32>) {
     let a = [10, 20, 30, 40]; // a plain array
-
-    // let mut v: Vec<i32> = Vec::new();
-    // v.push(10);
-    // v.push(20);
-    // v.push(30);
-    // v.push(40);
-
-    let v: Vec<i32> = Vec::from(a);
+    // let v: Vec<i32> = Vec::from(a);
+    let v: Vec<i32> = a.to_vec();
 
     (a, v)
 }

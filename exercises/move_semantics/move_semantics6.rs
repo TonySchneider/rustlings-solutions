@@ -8,7 +8,7 @@
 fn main() {
     let data = "Rust is great!".to_string();
 
-    let last_char = get_char(&data);
+    get_char(&data);
 
     string_uppercase(data);
 }
