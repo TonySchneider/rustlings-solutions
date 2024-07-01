@@ -6,11 +6,11 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-struct Wrapper<T: PartialOrd> {
+struct Wrapper<T> {
     value: T,
 }
 
-impl<T: PartialOrd> Wrapper<T> {
+impl<T> Wrapper<T> {
     pub fn new(value: T) -> Self {
         Wrapper { value }
     }

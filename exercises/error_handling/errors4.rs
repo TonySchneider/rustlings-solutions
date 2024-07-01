@@ -14,7 +14,16 @@ enum CreationError {
 
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
-        if value == 0 { Err(CreationError::Zero) } else if value < 0 { Err(CreationError::Negative) } else { Ok(PositiveNonzeroInteger(value as u64)) }
+        u64::try_from(value)
+            .map_err(|_| CreationError::Negative) // custom the error object. this returns Err but we want to define our custom Error.
+            .and_then(|num| {
+                // "and_then" handles the Ok value
+                if num == 0 {
+                    Err(CreationError::Zero)
+                } else {
+                    Ok(PositiveNonzeroInteger(num))
+                }
+            })
     }
 }
 

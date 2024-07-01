@@ -30,7 +30,7 @@ impl Package {
     }
 
     fn is_international(&self) -> bool {
-        if self.sender_country != self.recipient_country { true } else { false }
+        self.sender_country != self.recipient_country
     }
 
     fn get_fees(&self, cents_per_gram: u32) -> u32 {
