@@ -7,8 +7,6 @@
 // Execute `rustlings hint traits4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 pub trait Licensed {
     fn licensing_info(&self) -> String {
         "some information".to_string()
@@ -23,7 +21,10 @@ impl Licensed for SomeSoftware {}
 impl Licensed for OtherSoftware {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
-fn compare_license_types(software: ??, software_two: ??) -> bool {
+// I am using "impl" because it requires that both arguments be of the same specific type that implements the Licensed trait.
+// This is preferable over using `dyn`, which allows for dynamic typing. Dynamic typing is less suitable here since we need to ensure type consistency for comparison.
+// Also, along with the dyn, the argument must to be passed as reference. and here in the code I can change only the following code line and the function calls are passing the value itself and not reference.
+fn compare_license_types(software: impl Licensed, software_two: impl Licensed) -> bool {
     software.licensing_info() == software_two.licensing_info()
 }
 
